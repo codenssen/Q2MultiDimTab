@@ -14,17 +14,12 @@ class MainClass
 
         int[][] secondArray = [new int[3], new int[2], new int[1]];
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < secondArray.Length; i++)
         {
-            secondArray[0][i] = firstArray[0, i];           
-        }
-        for (int i = 0; i < 2; i++)
-        {
-            secondArray[1][i] = firstArray[1, i + 1];
-        }
-        for (int i = 0; i < 1; i++)
-        {
-            secondArray[2][i] = firstArray[2, i + 2];       
+            for (int j = 0; j < secondArray[i].Length; j++)
+            {
+                secondArray[i][j] = firstArray[i, j + i];
+            }
         }
 
         foreach (var item in secondArray)
